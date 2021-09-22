@@ -12,11 +12,11 @@ This repository contains the proposed solution for the assigned project Two Whee
         - [Analog](#Analog)
         - [Connectivity](#Connectivity)
 - [Software Architecture and Interfaces](#Software-Architecture-and-Interfaces)
-    - [Motor.h / Motor.c](#Motor.h-/-Motor.c)
-    - [Sonar.h / Sonar.c](#Sonar.h-/-Sonar.c)
-    - [Buzzer.h / Buzzer.c](#Buzzer.h-/-Buzzer.c)
-    - [I2C-lcd.h / I2C-lcd.c](#I2C-lcd.h-/-I2C-lcd.c)
-    - [Main.h / Main.c](#Main.h-/-Main.c)
+    - [Motor](#Motor)
+    - [Sonar](#Sonar)
+    - [Buzzer](#Buzzer)
+    - [I2C-lcd](#I2C-lcd)
+    - [Main](#Main)
 
 
 # Hardware Achitecture
@@ -142,7 +142,7 @@ car, that turns on the active buzzer.
 
 Besides the normal files provided automatically from STM32CubeIDE in every project, in Core/Inc and Core/Src can be found the header and source files for the modules used in this project.
 
-## Motor.h / Motor.c
+## Motor
 
 This library manages a single DC Motor and provides all the functions needed in order to start and stop the motor and set speed and direction. In the “Motor.h” file is defined the motor_class struct:
 
@@ -176,7 +176,7 @@ The following table describes the interface of this module:
 - motor_get_current_speed: returns the current speed
 - motor_get_pwm: returns the current pwm value
 
-## Sonar.h / Sonar.c
+## Sonar
 
 This library manages the ultrasonic module and provides all the function required to start the sonar, acquire the sound waves and compute the distance. In the “Sonar.h” file is defined the sonar_class struct:
 
@@ -205,7 +205,7 @@ The following table describes the interface of this module:
 - usDelay: utility function, used to produce the 10 μs longer desired signal
 - sonar_get_reading_edge: returns the value of the reading_edge variable
 
-## Buzzer.h / Buzzer.c
+## Buzzer
 
 This library manages the active buzzer module and provides all the function required to set and produce the desired alarm, in relation with the distance from the obstacle. In the “Buzzer.h” file is defined the buzzer_class struct:
 
@@ -234,7 +234,7 @@ The following table describes the interface of this module:
         - If alarm == ALARM_4, then a 0.1 s beep longer is produced every 0.25 s
         - ALARM_3 is unused
 
-## I2C-lcd.h / I2C-lcd.c
+## I2C-lcd
 
 This library manages the lcd display and provides all the function required to visualize a text on it, in particular in this project is used to visualize the distance from the obstacle. The slave address is: 0x4E.
 
@@ -249,7 +249,7 @@ The following table describes the interface of this module:
 - lcd_put_cur: used to select the position of the cursor
 - lcd_clear: used to clear the display from the current strings
 
-## Main.h / Main.c
+## Main
 
 The main.c file contains the logic of the program and connect all the modules described above. For the purpose of the project, the following function were added:
 
