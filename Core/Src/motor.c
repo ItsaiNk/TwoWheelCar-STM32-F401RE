@@ -39,10 +39,10 @@ void motor_start(motor_class* motor)
 
 void motor_set_speed_and_direction(motor_class* motor, enum DIRECTION direction, int desired_speed)
 {
-	// _motor_compute_current_speed(motor);
+	_motor_compute_current_speed(motor);
 	if(!motor->stopped){
-		__HAL_TIM_SET_COMPARE(motor->htim, motor->timer_channel, 10*desired_speed);
-		/*
+		// __HAL_TIM_SET_COMPARE(motor->htim, motor->timer_channel, 10*desired_speed);
+		
 		if (desired_speed != 0)
 			__HAL_TIM_SET_COMPARE(motor->htim, motor->timer_channel, _PID(motor, desired_speed, motor->current_speed));
 		else {
@@ -50,7 +50,7 @@ void motor_set_speed_and_direction(motor_class* motor, enum DIRECTION direction,
 			motor->prev_error = 0;
 			motor->historic_error = 0;
 			__HAL_TIM_SET_COMPARE(motor->htim, motor->timer_channel, 0);
-		} */
+		} 
 
 		if(direction == FORWARD)
 		{
