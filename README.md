@@ -164,7 +164,7 @@ This library manages a single DC Motor and provides all the functions needed in 
 
 The following table describes the interface of this module:
 
-![motor](doc/motor.png)
+![motor](Doc/motor.png)
 
 - motor__init__: initialize the motor_class struct
 - motor_start: it starts the timer with the HAL_TIM_PWM_Start function, provided by the Hardware Abstraction Layer, and sets stopped = 0
@@ -193,7 +193,7 @@ This library manages the ultrasonic module and provides all the function require
 
 The following table describes the interface of this module:
 
-![sonar](doc/sonar.png)
+![sonar](Doc/sonar.png)
 
 - sonar__init__: initialize the sonar_class struct
 - sonar_timer_overflow: when the timer overflow event occurs, increment the TIMER_OVERFLOW variable
@@ -219,7 +219,7 @@ It is also defined an enum called ALARM_TYPE, used to set which kind of alarm fr
 
 The following table describes the interface of this module:
 
-![buzzer](doc/buzzer.png)
+![buzzer](Doc/buzzer.png)
 
 - buzzer__init__: initialize the buzzer_class struct
 - buzzer_set_alarm: sets the desired kind of alarm
@@ -240,7 +240,7 @@ This library manages the lcd display and provides all the function required to v
 
 The following table describes the interface of this module:
 
-![I2C-lcd](doc/i2clcd.png)
+![I2C-lcd](Doc/i2clcd.png)
 
 - lcd_init: initialize and turns on the display
 - lcd_send_cmd: utility function, used by the others to send commands to the display
@@ -253,7 +253,7 @@ The following table describes the interface of this module:
 
 The main.c file contains the logic of the program and connect all the modules described above. For the purpose of the project, the following function were added:
 
-![main](doc/main.png)
+![main](Doc/main.png)
 
 - GetAlarmType: returns the desired alarm type based on the distance from the obstacle
 - CaptureCallback: this function is called by HAL_TIM_IC_CaptureCallback (stm32f4xx_it.c). Calls sonar_compute_distance and sets the buzzer’s alarm type in according to the distance
